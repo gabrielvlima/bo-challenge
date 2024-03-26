@@ -1,34 +1,47 @@
-import { useState, type ReactElement } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from "../public/vite.svg"
-import './App.css'
+import { useContext, useEffect } from 'react'
+import { ThemeContext } from './context/ThemeContext'
+import { UserContext } from './context/UserContext'
+import CssBaseline from '@mui/material/CssBaseline'
+import {
+  ThemeProvider as ThemeProviderMUI,
+  createTheme,
+} from '@mui/material/styles'
+import { Container } from '@mui/material'
+import { Loading } from './components/Loading'
+import { publicRoute } from './Routes/publicRoute'
+import { authRoute } from './Routes/authRoute'
+import { RouterProvider } from 'react-router-dom'
 
-function App():ReactElement  {
-  const [count, setCount] = useState(0)
+function App() {
+  const { theme } = useContext(ThemeContext)
+  const { loading, isUserEmpty, verifyUser } = useContext(UserContext)
+
+  const customTheme = createTheme({
+    palette: {
+      mode: theme,
+    },
+  })
+
+  useEffect(() => {
+    verifyUser()
+  }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => { setCount((count) => count + 1); }}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProviderMUI theme={customTheme}>
+      <CssBaseline />
+      <Container
+        sx={{
+          display: 'flex',
+          height: '100vh',
+        }}
+      >
+        {loading ? (
+          <Loading size={200} />
+        ) : (
+          <RouterProvider router={isUserEmpty() ? publicRoute : authRoute} />
+        )}
+      </Container>
+    </ThemeProviderMUI>
   )
 }
 

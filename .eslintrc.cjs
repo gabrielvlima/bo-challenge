@@ -14,7 +14,7 @@ module.exports = {
                 "node": true
             },
             "files": [
-                ".eslintrc.{js,cjs}"
+                ".eslintrc.{js, cjs, ts, tsx}"
             ],
             "parserOptions": {
                 "sourceType": "script"
@@ -26,12 +26,14 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "eslint-config-prettier",
     ],
     "rules": {
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/consistent-type-definitions": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off"
     }
 }

@@ -9,7 +9,7 @@ export const login = async (data: any) => {
 
 export const getUser = async (email: string, token: string) => {
   // force get user
-  const response = await api.get('/users?page=1&per_page=12&delay=2', {
+  const response = await api.get('/users?page=1&per_page=12', {
     headers: getAuth(token),
   });
 

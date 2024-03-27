@@ -33,6 +33,7 @@ function App() {
         sx={{
           display: 'flex',
           height: '100vh',
+          justifyContent: 'center',
         }}
       >
         {loading ? (

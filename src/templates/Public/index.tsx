@@ -16,12 +16,20 @@ const PublicTemplate: React.FC = () => {
         borderSpacing: 1,
         borderStyle: 'solid',
         borderRadius: 16,
-        gap: 1,
-        marginY: 10,
-        padding: 10,
+        margin: 4,
+        padding: 2,
+        maxWidth: '500px !important',
+        maxHeight: '800px !important',
       }}
     >
-      <img src={Logo} alt="logo" />
+      <img
+        src={Logo}
+        alt="logo"
+        style={{
+          height: '120px',
+          width: 'auto',
+        }}
+      />
       <Outlet />
     </Container>
   );

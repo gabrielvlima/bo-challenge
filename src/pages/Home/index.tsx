@@ -181,7 +181,7 @@ const Home: React.FC = () => {
         color="secondary"
         aria-label="add"
         sx={{
-          position: 'absolute',
+          position: 'fixed',
           bottom: 16,
           right: 16,
         }}

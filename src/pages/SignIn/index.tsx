@@ -59,34 +59,44 @@ const SignIn: React.FC = () => {
         flexDirection: 'column',
         gap: 2,
         width: '100%',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        height: '100%',
       }}
     >
-      <Typography variant="h1">Sign In</Typography>
-      <TextField
-        fullWidth
-        label="E-mail"
-        type="email"
-        variant="outlined"
-        disabled={loading}
-        helperText={errors.email?.message}
-        error={!!errors.email?.message}
-        {...register('email')}
-      />
-      <TextField
-        fullWidth
-        label="Password"
-        type="password"
-        variant="outlined"
-        disabled={loading}
-        helperText={errors.password?.message}
-        error={!!errors.password?.message}
-        {...register('password')}
-      />
-      <Button variant="contained" type="submit" disabled={loading} fullWidth>
+      <Typography variant="h3">Sign In</Typography>
+      <Box sx={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+        width: '100%'
+      }}>
+        <TextField
+          fullWidth
+          label="E-mail"
+          type="email"
+          variant="outlined"
+          disabled={loading}
+          helperText={errors.email?.message}
+          error={!!errors.email?.message}
+          {...register('email')}
+        />
+        <TextField
+          fullWidth
+          label="Password"
+          type="password"
+          variant="outlined"
+          disabled={loading}
+          helperText={errors.password?.message}
+          error={!!errors.password?.message}
+          {...register('password')}
+        />
+        <Button variant="contained" type="submit" disabled={loading} fullWidth>
         {loading ? <CircularProgress /> : 'Login'}
       </Button>
+      </Box>
+
       <Typography
         variant="subtitle2"
         color={t => t.palette.error.main}

@@ -66,44 +66,53 @@ const SignUp: React.FC = () => {
         flexDirection: 'column',
         gap: 2,
         width: '100%',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        height: '100%',
       }}
     >
-      <Typography variant="h1">Sign Up</Typography>
-      <TextField
-        fullWidth
-        label="E-mail"
-        type="email"
-        variant="outlined"
-        disabled={loading}
-        helperText={errors.email?.message}
-        error={!!errors.email?.message}
-        {...register('email')}
-      />
-      <TextField
-        fullWidth
-        label="Password"
-        type="password"
-        variant="outlined"
-        disabled={loading}
-        helperText={errors.password?.message}
-        error={!!errors.password?.message}
-        {...register('password')}
-      />
-      <TextField
-        fullWidth
-        label="Confirm password"
-        type="password"
-        variant="outlined"
-        disabled={loading}
-        helperText={errors.confirmPassword?.message}
-        error={!!errors.confirmPassword?.message}
-        {...register('confirmPassword')}
-      />
-      <Button variant="contained" disabled={loading} type="submit" fullWidth>
-        {loading ? <CircularProgress /> : 'Register'}
-      </Button>
+      <Typography variant="h3">Sign Up</Typography>
+      <Box sx={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+        width: '100%'
+      }}>
+        <TextField
+          fullWidth
+          label="E-mail"
+          type="email"
+          variant="outlined"
+          disabled={loading}
+          helperText={errors.email?.message}
+          error={!!errors.email?.message}
+          {...register('email')}
+        />
+        <TextField
+          fullWidth
+          label="Password"
+          type="password"
+          variant="outlined"
+          disabled={loading}
+          helperText={errors.password?.message}
+          error={!!errors.password?.message}
+          {...register('password')}
+        />
+        <TextField
+          fullWidth
+          label="Confirm password"
+          type="password"
+          variant="outlined"
+          disabled={loading}
+          helperText={errors.confirmPassword?.message}
+          error={!!errors.confirmPassword?.message}
+          {...register('confirmPassword')}
+        />
+        <Button variant="contained" disabled={loading} type="submit" fullWidth>
+          {loading ? <CircularProgress /> : 'Register'}
+        </Button>
+      </Box>
       <Typography
         variant="subtitle2"
         color={t => t.palette.error.main}

@@ -62,7 +62,7 @@ export const AppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem onClick={handleCloseUserMenu}>
+              <MenuItem>
                 <SwitchTheme />
               </MenuItem>
               <MenuItem onClick={logout}>

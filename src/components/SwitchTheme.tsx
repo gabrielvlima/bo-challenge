@@ -69,6 +69,7 @@ export const SwitchTheme = () => {
           <MaterialUISwitch
             sx={{ m: 1 }}
             value={theme === 'dark'}
+            defaultChecked={theme === 'dark'}
             onChange={handleTheme}
           />
         }

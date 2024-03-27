@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../../context/UserContext';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const AuthTemplate: React.FC = () => {
-  const { user } = useContext(UserContext);
-
-  return <h1>Hello {user.first_name}</h1>;
+  return <Outlet />;
 };
 
 export default AuthTemplate;

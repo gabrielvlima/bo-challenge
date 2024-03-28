@@ -41,3 +41,4 @@ The backend use the moked api: https://reqres.in/
 
 - Support docker
 - Contains tests with cypress
+- published: https://boc2024.netlify.app/

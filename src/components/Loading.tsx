@@ -1,10 +1,10 @@
-import React from 'react'
-import CircularProgress from '@mui/material/CircularProgress'
-import Box from '@mui/material/Box'
+import React from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 type Props = {
-  size?: number
-}
+  size?: number;
+};
 
 export const Loading: React.FC<Props> = ({ size = 40 }) => {
   return (
@@ -18,5 +18,5 @@ export const Loading: React.FC<Props> = ({ size = 40 }) => {
     >
       <CircularProgress size={size} />
     </Box>
-  )
-}
+  );
+};

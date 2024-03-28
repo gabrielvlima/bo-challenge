@@ -26,8 +26,8 @@ export const UserContext = createContext({
   token: '',
   loading: true,
   isUserEmpty: (): boolean => false,
-  setUserData: (newUser: User) => {},
-  setToken: (token: string) => {},
+  setUserData: (_: User) => {},
+  setToken: (_: string) => {},
   logout: () => {},
   verifyUser: () => {},
 });

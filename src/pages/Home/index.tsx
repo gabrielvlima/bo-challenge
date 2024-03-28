@@ -31,10 +31,7 @@ const Home: React.FC = () => {
   const [error, setError] = useState('');
   const [actualUser, setActualUser] = useState<User | undefined>();
 
-  const handleChangePage = (
-    event: React.ChangeEvent<unknown>,
-    value: number,
-  ) => {
+  const handleChangePage = (_: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
 

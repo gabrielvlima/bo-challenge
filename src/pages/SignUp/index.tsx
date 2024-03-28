@@ -72,13 +72,15 @@ const SignUp: React.FC = () => {
       }}
     >
       <Typography variant="h3">Sign Up</Typography>
-      <Box sx={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-        width: '100%'
-      }}>
+      <Box
+        sx={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+          width: '100%',
+        }}
+      >
         <TextField
           fullWidth
           label="E-mail"

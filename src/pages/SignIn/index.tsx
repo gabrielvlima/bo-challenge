@@ -65,13 +65,15 @@ const SignIn: React.FC = () => {
       }}
     >
       <Typography variant="h3">Sign In</Typography>
-      <Box sx={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-        width: '100%'
-      }}>
+      <Box
+        sx={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+          width: '100%',
+        }}
+      >
         <TextField
           fullWidth
           label="E-mail"
@@ -93,8 +95,8 @@ const SignIn: React.FC = () => {
           {...register('password')}
         />
         <Button variant="contained" type="submit" disabled={loading} fullWidth>
-        {loading ? <CircularProgress /> : 'Login'}
-      </Button>
+          {loading ? <CircularProgress /> : 'Login'}
+        </Button>
       </Box>
 
       <Typography

@@ -1,7 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom'
-import Home from '../pages/Home'
-import ErrorPage from '../pages/ErrorPage'
-import AuthTemplate from '../templates/Auth'
+import { createBrowserRouter } from 'react-router-dom';
+import Home from '../pages/Home';
+import ErrorPage from '../pages/ErrorPage';
+import AuthTemplate from '../templates/Auth';
 
 export const authRoute = createBrowserRouter([
   {
@@ -15,4 +15,4 @@ export const authRoute = createBrowserRouter([
       },
     ],
   },
-])
+]);

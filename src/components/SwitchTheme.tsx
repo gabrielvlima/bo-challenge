@@ -56,7 +56,7 @@ export const SwitchTheme = () => {
   const { theme, changeTheme } = useContext(ThemeContext);
 
   const handleTheme = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    _: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
   ) => {
     changeTheme(checked ? 'dark' : 'light');
